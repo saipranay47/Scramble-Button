@@ -14,3 +14,17 @@
   font-weight: bold;
   font-style: normal;
 }
+
+.scramble-text {
+  display: inline-block;
+  animation: scramble 0.3s infinite alternate;
+}
+
+@keyframes scramble {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0.1em);
+  }
+}
