@@ -50,6 +50,7 @@ function App() {
   const scrambleText = (text) => {
     const scrambleChars = "abcdefghijklmnopqrstuvwxyz-.，+*@&%/=";
     let i = 0;
+    text = "Get started →"
 
     const performIteration = () => {
       if (i <= text.length) {
@@ -70,7 +71,7 @@ function App() {
         i++;
 
         if (i <= text.length) {
-          setTimeout(performIteration, 50);
+          setTimeout(performIteration, 30);
         }
       }
     };
