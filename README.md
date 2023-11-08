@@ -6,7 +6,8 @@ This project showcases a simple yet impactful micro-interaction using React and 
 
 Link to demo: https://scramble-button.vercel.app/
 
-<video src="Screen%20Recording%202023-11-08%20at%205.24.37%E2%80%AFPM.mp4" controls title="scramble button animation demo"></video>
+[![Watch the video](image.png)](https://github.com/saipranay47/Scramble-Button/raw/main/Screen%20Recording%202023-11-08%20at%205.24.37%E2%80%AFPM.mp4)
+
 
 ## Features
 
