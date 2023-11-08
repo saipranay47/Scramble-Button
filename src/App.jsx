@@ -1,95 +1,14 @@
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import Madeby from "./assets/madebypranay.svg";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
+import Madeby from "./assets/madebypranay.svg";
+import Button from "./Button";
 
 function App() {
   const [isHovered, setIsHovered] = useState(false);
-  const [text, setText] = useState("Get started →");
 
-  const buttonVariants = {
-    initial: {
-      backgroundColor: "#000",
-      color: "#fff",
-      boxShadow: "rgba(255, 255, 255, 0.413) 0px 0px 0px",
-    },
-    hover: {
-      backgroundColor: "#fff",
-      color: "#000",
-      transition: {
-        duration: 0.3,
-        yoyo: Infinity,
-      },
-      boxShadow: "rgba(255, 255, 255, 0.413) 0px 0px 50px",
-    },
+  const handleHover = (hovered) => {
+    setIsHovered(hovered);
   };
-
-  const textVariants = {
-    initial: {
-      x: 0,
-      transition: {
-        duration: 3,
-      },
-    },
-    hover: {
-      x: 300,
-      display: "none",
-      transition: {
-        duration: 3,
-      },
-    },
-  };
-  const textVariants2 = {
-    initial: {
-      display: "none",
-    },
-    hover: {
-      display: "block",
-    },
-  };
-
-  const scrambleText = (text) => {
-    const scrambleChars = "abcdefghijklmnopqrstuvwxyz-.，+*@&%/=";
-    let i = 0;
-    text = "Get started →"
-
-    const performIteration = () => {
-      if (i <= text.length) {
-        const unscrambledText = text
-          .split("")
-          .map((char, index) => {
-            if (index < i) {
-              return text[index];
-            }
-            return scrambleChars[
-              Math.floor(Math.random() * scrambleChars.length)
-            ];
-          })
-          .join("");
-
-        setText(unscrambledText);
-
-        i++;
-
-        if (i <= text.length) {
-          setTimeout(performIteration, 30);
-        }
-      }
-    };
-
-    performIteration();
-  };
-
-  const handleHover = () => {
-    setIsHovered(true);
-    scrambleText(text);
-  };
-
-  useEffect(() => {
-    if (!isHovered) {
-      setText("Get started →");
-    }
-  }, [isHovered]);
 
   return (
     <div>
@@ -104,31 +23,7 @@ function App() {
           backgroundBlendMode: "overlay",
         }}
       >
-        <motion.button
-          className="text-[80px] border-2 rounded-full h-[191px] w-[750px] flex justify-center items-center"
-          variants={buttonVariants}
-          initial="initial"
-          whileHover="hover"
-          onMouseEnter={handleHover}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <motion.span
-            variants={textVariants}
-            className=" w-full text-left ml-32 overflow-hidden"
-          >
-            Get started →
-          </motion.span>
-
-          <motion.span
-            variants={textVariants2}
-            className=" w-full text-left  overflow-hidden"
-            style={{
-              transform: "translateX(128px)",
-            }}
-          >
-            {text}
-          </motion.span>
-        </motion.button>
+        <Button text={"Get started →"} onHover={handleHover} />
       </div>
       <a
         href="https://saipranay.vercel.app/"
