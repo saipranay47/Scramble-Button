@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Madeby from "./assets/madebypranay.svg";
 import clsx from "clsx";
 
 function App() {
@@ -121,7 +122,7 @@ function App() {
           <motion.span
             variants={textVariants2}
             className=" w-full text-left  overflow-hidden"
-            style={{ 
+            style={{
               transform: "translateX(128px)",
             }}
           >
@@ -129,6 +130,17 @@ function App() {
           </motion.span>
         </motion.button>
       </div>
+      <a
+        href="https://saipranay.vercel.app/"
+        target="_blank"
+        className="fixed bottom-10 right-10"
+      >
+        <img
+          src={Madeby}
+          alt="sai pranay portfolio redirect"
+          className="fixed bottom-8 right-8 w-60"
+        />
+      </a>
     </div>
   );
 }
