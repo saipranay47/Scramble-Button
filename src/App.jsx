@@ -32,7 +32,7 @@ function App() {
       >
         <img
           src={Madeby}
-          alt="sai pranay portfolio redirect"
+          alt="sai pranay portfolio website redirect"
           className="fixed bottom-8 right-8 w-60"
         />
       </a>
